@@ -189,7 +189,8 @@ const Games = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   @media only screen and (max-width: 38em) {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+    column-gap: 0.5rem;
   }
   grid-column-gap: 1.5rem;
   grid-row-gap: 3rem;
