@@ -129,9 +129,6 @@ const Games = styled(motion.div)`
   min-height: 80vh;
   /* display: flex;
   flex-wrap: wrap; */
-  @media only screen and (max-width: 38em) {
-    min-height: 50vh;
-  }
   position: relative;
   .loader {
     position: absolute;
@@ -192,9 +189,7 @@ const Games = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   @media only screen and (max-width: 38em) {
-    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
-    column-gap: 0.5rem;
-    row-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
   grid-column-gap: 1.5rem;
   grid-row-gap: 3rem;
