@@ -81,7 +81,7 @@ const StyledGame = styled(motion.div)`
   border-radius: 1rem;
   overflow: hidden;
   color: white;
-  height: 25rem;
+  min-height: 25rem;
   transition: height 0.5s ease !important;
   cursor: pointer;
   h3,
