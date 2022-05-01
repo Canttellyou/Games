@@ -129,6 +129,9 @@ const Games = styled(motion.div)`
   min-height: 80vh;
   /* display: flex;
   flex-wrap: wrap; */
+  @media only screen and (max-width: 38em) {
+    min-height: 50vh;
+  }
   position: relative;
   .loader {
     position: absolute;
