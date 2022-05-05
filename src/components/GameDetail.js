@@ -97,9 +97,13 @@ const GameDetail = ({ pathId }) => {
                 <div className="rating-rate">
                   <p> Rating: {game.rating}</p> {getStars()}
                 </div>
-                <Website>
-                  Website: <a href={game.website}>Click here</a>
-                </Website>
+                {game.website === "" ? (
+                  ""
+                ) : (
+                  <Website>
+                    Website: <a href={game.website}>Click here</a>
+                  </Website>
+                )}
               </div>
 
               <Info>
