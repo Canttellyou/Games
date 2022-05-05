@@ -15,13 +15,13 @@ import gamepad from "../img/gamepad.svg";
 //Star Images
 import starEmpty from "../img/star-empty.png";
 import starFull from "../img/star-full.png";
-
+import { Link } from "react-router-dom";
 const GameDetail = ({ pathId }) => {
   const history = useHistory();
 
   //Data
   const { screen, game, isLoading } = useSelector((state) => state.detail);
-
+  console.log(game);
   //Exit Detail
   const exitDetailHandler = (e) => {
     const element = e.target;
@@ -88,13 +88,20 @@ const GameDetail = ({ pathId }) => {
       ) : (
         <CardShadow className="shadow" onClick={exitDetailHandler}>
           <Detail layoutId={pathId}>
+            <Close className="shadow" onClick={exitDetailHandler}>
+              X
+            </Close>
             <Stats>
               <div className="rating">
                 <h3>{game.name} </h3>
                 <div className="rating-rate">
                   <p> Rating: {game.rating}</p> {getStars()}
                 </div>
+                <Website>
+                  Website: <a href={game.website}>Click here</a>
+                </Website>
               </div>
+
               <Info>
                 <h3>Platforms</h3>
                 <Platforms>
@@ -249,6 +256,21 @@ const Detail = styled(motion.div)`
     width: 100%;
   }
 `;
+const Close = styled.div`
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border: 1px solid white;
+  /* padding: 0.75rem; */
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+`;
 const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
@@ -322,6 +344,20 @@ const Gallery = styled(motion.div)`
     @media only screen and (max-width: 38em) {
       border-radius: 0.5rem;
     }
+  }
+`;
+const Website = styled.div`
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+
+  a,
+  a:link,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
   }
 `;
 export default GameDetail;
