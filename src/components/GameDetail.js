@@ -101,7 +101,7 @@ const GameDetail = ({ pathId }) => {
                   ""
                 ) : (
                   <Website>
-                    Website: <a href={game.website}>Click here</a>
+                    <a href={game.website}>Where To Buy</a>
                   </Website>
                 )}
               </div>
